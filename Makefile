@@ -3,6 +3,7 @@ SHELL:=/bin/bash
 .PHONY: install
 install: ## make install # Install dependencies
 	@rbenv install -s && gem install bundler
+	@gem install archivesspace-client
 	@gem install overcommit && overcommit --install && overcommit --sign pre-commit
 	@npm install && npm i -g npx || true
 

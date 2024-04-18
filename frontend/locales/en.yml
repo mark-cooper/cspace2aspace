@@ -1,0 +1,9 @@
+en:
+  plugins:
+    cspace2aspace:
+      logo_alt_text: CollectionSpace logo
+
+  welcome:
+    heading: Welcome to CollectionSpace
+    message: Your friendly museum management tool.
+    message_logged_in: Your friendly museum management tool.
