@@ -1,0 +1,17 @@
+<%= setup_context :object => @collection_object, :title => @collection_object.object_number %>
+
+<div class="row">
+   <div class="col-md-3">
+     <%= render_aspace_partial :partial => "sidebar" %>
+   </div>
+  <div class="col-md-9">
+    <%= render_aspace_partial :partial => "toolbar", :locals => { :title => @collection_object.object_number } %>
+    <div class="record-pane">
+      <h2><%= @collection_object.object_number %>  <span class="label label-info"><%= I18n.t("collection_object._singular") %></span></h2>
+
+      <%= readonly_context :collection_object, @collection_object do |readonly| %>
+        <%= render_aspace_partial :partial => "form", :locals => {:form => readonly} %>
+      <% end %>
+    </div>
+  </div>
+</div>

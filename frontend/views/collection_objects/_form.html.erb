@@ -1,0 +1,23 @@
+<%= render_aspace_partial :partial => "shared/form_messages", :locals => {:object => @collection_object, :form => form} %>
+
+<% define_template("collection_object", jsonmodel_definition(:collection_object)) do |form| %>
+  <section id="basic_information">
+    <h3>
+      <%= I18n.t("collection_object._frontend.section.basic_information") %>
+      <%= link_to_help :topic => "collection_object_basic_information" %>
+    </h3>
+    <fieldset>
+      <%= render_plugin_partials("top_of_basic_information_collection_object",
+                                 :form => form,
+                                 :record => @collection_object) %>
+
+      <%= form.label_and_textfield("object_number")%>
+      <%= form.label_and_textarea "title", :field_opts => {
+        :class => "form-control#{AppConfig[:allow_mixed_content_title_fields] ? ' mixed-content' : ''}"
+      } %>
+    </fieldset>
+  </section>
+<% end %>
+
+<% form.emit_template("collection_object") %>
+<%= form_plugins_for("collection_object", form) %>

@@ -71,3 +71,9 @@ asclient exec get --rid 2 collection_objects --params '{"query": {"page": 1}}' |
 asclient exec post --rid 2 collection_objects/1 --payload '{"lock_version": 0, "object_number": "456", "title": "CollectionSpace"}'
 asclient exec get --rid 2 collection_objects/1 | jq .
 ```
+
+## Tracking overrides
+
+Danger :boom:
+
+- frontend/views/shared/\_header_repository.html.erb

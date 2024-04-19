@@ -6,6 +6,8 @@ Sequel.migration do
       Integer :lock_version, default: 0, null: false
       Integer :json_schema_version, null: false
       Integer :repo_id, null: false
+      Integer :publish
+      Integer :suppressed, default: 0, null: false
 
       String :object_number, null: false
       String :title, null: true

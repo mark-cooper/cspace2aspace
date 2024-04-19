@@ -1,5 +1,5 @@
 <div class="container-fluid navbar-branding">
-  <%= image_tag asset_path("collectionspace.svg"),
+  <%= image_tag "#{AppConfig[:frontend_proxy_prefix]}assets/collectionspace.svg",
     :class =>"header-logo",
     :alt => I18n.t("plugins.cspace2aspace.logo_alt_text")
   %>

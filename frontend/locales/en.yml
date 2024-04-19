@@ -7,3 +7,16 @@ en:
     heading: Welcome to CollectionSpace
     message: Your friendly museum management tool.
     message_logged_in: Your friendly museum management tool.
+
+  collection_object:
+    object_number: Object Identification Number
+    title: Title
+    _frontend:
+      action:
+        create: Create Collection Object
+      messages:
+        suppressed_info: Collection Object is suppressed and cannot be edited
+      section:
+        basic_information: Basic Information
+    _singular: Collection Object
+    _plural: Collection Objects
