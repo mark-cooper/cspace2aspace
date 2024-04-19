@@ -32,6 +32,8 @@ Start the ArchiveSpace backend. The abridged form of doing this is:
 ```bash
 # from the ArchivesSpace source directory, start MySQL and Solr
 docker compose -f docker-compose-dev.yml up --detach
+# Run the database migrations
+./build/run db:migrate
 # Run the ArchivesSpace backend only
 supervisord -c supervisord/backend.conf
 ```
@@ -64,5 +66,8 @@ Run commands:
 
 ```bash
 # --rid (repository id)
-asclient exec get --rid 2 resources/1 | jq .
+asclient exec post --rid 2 collection_objects --payload '{"object_number": "123", "title": "ArchivesSpace"}'
+asclient exec get --rid 2 collection_objects --params '{"query": {"page": 1}}' | jq .
+asclient exec post --rid 2 collection_objects/1 --payload '{"lock_version": 0, "object_number": "456", "title": "CollectionSpace"}'
+asclient exec get --rid 2 collection_objects/1 | jq .
 ```
